@@ -2,7 +2,7 @@
   <div class="carousel">
     <div v-if="photos.length === 0" class="placeholder">No photos</div>
     <template v-else>
-      <img :src="photos[active]" :alt="`Photo ${active + 1}`" class="photo" />
+      <img :src="baseUrl + photos[active]" :alt="`Photo ${active + 1}`" class="photo" />
       <button v-if="photos.length > 1" class="arrow prev" @click.stop="prev">‹</button>
       <button v-if="photos.length > 1" class="arrow next" @click.stop="next">›</button>
       <div v-if="photos.length > 1" class="dots">
@@ -22,6 +22,7 @@
 import { ref, watch } from 'vue'
 
 const props = defineProps({ photos: { type: Array, default: () => [] } })
+const baseUrl = import.meta.env.BASE_URL
 const active = ref(0)
 
 watch(() => props.photos, () => { active.value = 0 })

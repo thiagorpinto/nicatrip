@@ -145,7 +145,7 @@ async function downloadPhotos(placeId, photoRefs, apiKey, baseDir) {
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       const buf = Buffer.from(await res.arrayBuffer())
       writeFileSync(dest, buf)
-      paths.push(`/photos/${placeId}/${i}.jpg`)
+      paths.push(`photos/${placeId}/${i}.jpg`)
     } catch (e) {
       console.warn(`Photo download failed for ${placeId}[${i}]:`, e.message)
     }
