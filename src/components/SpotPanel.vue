@@ -47,6 +47,10 @@
           </div>
         </template>
 
+        <template v-else-if="activeTab === 'Stay'">
+          <StayTab :accommodations="spot.accommodations" />
+        </template>
+
         <template v-else>
           <p class="placeholder">{{ activeTab }} coming soon.</p>
         </template>
@@ -58,6 +62,7 @@
 <script setup>
 import { ref, computed, watch } from 'vue'
 import { useUserLists } from '../composables/useUserLists.js'
+import StayTab from './StayTab.vue'
 
 const props = defineProps({ spot: Object })
 const emit = defineEmits(['close'])
