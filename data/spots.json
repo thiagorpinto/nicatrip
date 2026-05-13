@@ -1,41 +1,572 @@
 [
   {
-    "id": "mock-001",
+    "id": "61d4d151c15a827dc58364ec",
+    "name": "The Boom",
+    "coordinates": [
+      12.6269,
+      -87.3561
+    ],
+    "difficulty": "FAIR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "5a1dfd8b1d8788001b7966de",
+    "name": "Las Penitas",
+    "coordinates": [
+      12.371379957548557,
+      -87.0373
+    ],
+    "difficulty": "FAIR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "640a43cd606c459a04b1ac93",
+    "name": "Salinas Grandes",
+    "coordinates": [
+      12.2586,
+      -86.8623
+    ],
+    "difficulty": "POOR_TO_FAIR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "5842041f4e65fad6a7708f1c",
+    "name": "Puerto Sandino",
+    "coordinates": [
+      12.188,
+      -86.777
+    ],
+    "difficulty": "FAIR_TO_GOOD",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "584204204e65fad6a7709147",
+    "name": "Miramar",
+    "coordinates": [
+      12.167,
+      -86.766
+    ],
+    "difficulty": "FAIR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "584204204e65fad6a7709983",
+    "name": "Shack's/Shifty's",
+    "coordinates": [
+      12.16393,
+      -86.76109
+    ],
+    "difficulty": "FAIR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "640a43cfb6d7693b75524287",
+    "name": "Playa Hermosa",
+    "coordinates": [
+      12.1093,
+      -86.7369
+    ],
+    "difficulty": "POOR_TO_FAIR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "584204204e65fad6a7709078",
+    "name": "El Transito",
+    "coordinates": [
+      12.052,
+      -86.708
+    ],
+    "difficulty": "FAIR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "640a43cb606c459db4b1ac24",
+    "name": "Gran Pacifica",
+    "coordinates": [
+      11.9109,
+      -86.6201
+    ],
+    "difficulty": "POOR_TO_FAIR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "640a43cae920302e619ee5fb",
+    "name": "Montelimar",
+    "coordinates": [
+      11.8022,
+      -86.5214
+    ],
+    "difficulty": "FAIR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "640a43c84eb37527969566d6",
+    "name": "Masachapa",
+    "coordinates": [
+      11.7791,
+      -86.522
+    ],
+    "difficulty": "FAIR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "640a43c74eb37578f3956659",
+    "name": "Pochomil",
+    "coordinates": [
+      11.7523,
+      -86.4871
+    ],
+    "difficulty": "FAIR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "640a43c5e920302ce89ee49f",
+    "name": "Casares",
+    "coordinates": [
+      11.6467,
+      -86.3606
+    ],
+    "difficulty": "POOR_TO_FAIR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "640a43b745190506a99db6db",
+    "name": "El Penon",
+    "coordinates": [
+      11.5219,
+      -86.1777
+    ],
+    "difficulty": "POOR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "584204204e65fad6a770910c",
+    "name": "El Astillero",
+    "coordinates": [
+      11.518,
+      -86.176
+    ],
+    "difficulty": "FAIR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "5842041f4e65fad6a7708db9",
+    "name": "Popoyo",
+    "coordinates": [
+      11.45905865759882,
+      -86.11157
+    ],
+    "difficulty": "POOR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "5842041f4e65fad6a7708dba",
+    "name": "Popoyo Outer Reef",
+    "coordinates": [
+      11.45532,
+      -86.10989
+    ],
+    "difficulty": "POOR_TO_FAIR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "685026ddef32a72c101bad7b",
+    "name": "Beginners Bay",
+    "coordinates": [
+      11.45385,
+      -86.10499
+    ],
+    "difficulty": "POOR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "5842041f4e65fad6a7708b44",
+    "name": "Santana",
+    "coordinates": [
+      11.44161,
+      -86.08763
+    ],
+    "difficulty": "FAIR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "640a43b945190504b29db760",
+    "name": "Playa Rosada",
+    "coordinates": [
+      11.4339,
+      -86.0844
+    ],
+    "difficulty": "POOR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "584204204e65fad6a7709146",
+    "name": "Panga Drops",
+    "coordinates": [
+      11.408,
+      -86.056
+    ],
+    "difficulty": "FAIR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "5842041f4e65fad6a7708e1e",
+    "name": "Colorados",
+    "coordinates": [
+      11.40551,
+      -86.05062
+    ],
+    "difficulty": "POOR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "5842041f4e65fad6a7708dbd",
+    "name": "Manzanillo",
+    "coordinates": [
+      11.36577672698044,
+      -86.0100626486595
+    ],
+    "difficulty": "POOR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "5842041f4e65fad6a7708dc0",
     "name": "Playa Maderas",
     "coordinates": [
-      11.47,
-      -85.888
+      11.29203,
+      -85.91287
     ],
-    "difficulty": "intermediate",
-    "waveType": "beach break",
+    "difficulty": "POOR",
+    "waveType": "",
     "guide": {
-      "description": "A beautiful beach break.",
-      "bestSeason": "May–November",
-      "bestTide": "Mid tide",
-      "crowdLevel": "Moderate",
-      "hazards": "Rocks at low tide"
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
     },
-    "accommodations": [
-      {
-        "name": "Surf Camp Maderas",
-        "type": "surf-camp",
-        "nightlyPrice": null,
-        "rating": 4.5,
-        "photos": [
-          "photo_ref_1"
-        ],
-        "amenities": [],
-        "instagramHandle": null,
-        "reviews": []
-      }
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "640a43bb99dd44a7db043898",
+    "name": "El Remanso",
+    "coordinates": [
+      11.2205,
+      -85.8494
     ],
-    "around": [
-      {
-        "name": "El Timon Restaurant",
-        "category": "restaurant",
-        "rating": 4.2,
-        "note": ""
-      }
-    ]
+    "difficulty": "POOR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "640a43bc4eb375bdff956392",
+    "name": "Tamarind",
+    "coordinates": [
+      11.2147,
+      -85.8469
+    ],
+    "difficulty": "POOR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "640a43c3e920305a089ee41b",
+    "name": "Playa Hermosa",
+    "coordinates": [
+      11.203,
+      -85.837
+    ],
+    "difficulty": "POOR_TO_FAIR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "640a43be451905ebdf9db8ad",
+    "name": "El Yanke",
+    "coordinates": [
+      11.1809,
+      -85.8183
+    ],
+    "difficulty": "POOR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "640a43c0e9203045249ee30a",
+    "name": "El Coco",
+    "coordinates": [
+      11.158,
+      -85.8042
+    ],
+    "difficulty": "POOR_TO_FAIR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
+  },
+  {
+    "id": "640a43c1e9203002b49ee3a0",
+    "name": "Sally Ann's",
+    "coordinates": [
+      11.1314,
+      -85.8003
+    ],
+    "difficulty": "POOR_TO_FAIR",
+    "waveType": "",
+    "guide": {
+      "description": "",
+      "bestSeason": "",
+      "bestTide": "",
+      "crowdLevel": "",
+      "hazards": ""
+    },
+    "accommodations": [],
+    "around": []
   }
 ]
