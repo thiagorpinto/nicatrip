@@ -33,7 +33,7 @@ onMounted(async () => {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   }).addTo(map)
 
-  const res = await fetch('/nicatrip/data/spots.json')
+  const res = await fetch(`${import.meta.env.BASE_URL}data/spots.json`)
   const spots = await res.json()
 
   const markers = spots.map(spot => {

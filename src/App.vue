@@ -19,7 +19,7 @@ const selectedSpot = ref(null)
 const drawerOpen = ref(false)
 const allSpots = ref([])
 
-fetch('/nicatrip/data/spots.json').then(r => r.json()).then(d => { allSpots.value = d })
+fetch(`${import.meta.env.BASE_URL}data/spots.json`).then(r => r.json()).then(d => { allSpots.value = d })
 
 function onSelectSpot(spot) {
   selectedSpot.value = spot

@@ -5,36 +5,36 @@ const STORAGE_KEY = 'nicatrip_wishlist'
 function loadWishlist() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
-    return raw ? new Set(JSON.parse(raw)) : new Set()
+    const ids = raw ? JSON.parse(raw) : []
+    return Object.fromEntries(ids.map(id => [id, true]))
   } catch {
-    return new Set()
+    return {}
   }
 }
 
-const state = reactive({
-  wishlist: loadWishlist(),
-})
+// Reactive record: { [spotId]: true } — plain object, unambiguous Vue 3 reactivity
+const wishlist = reactive(loadWishlist())
 
 function persist() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify([...state.wishlist]))
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(Object.keys(wishlist)))
 }
 
 export function useUserLists() {
   function toggleWishlist(spotId) {
-    if (state.wishlist.has(spotId)) {
-      state.wishlist.delete(spotId)
+    if (wishlist[spotId]) {
+      delete wishlist[spotId]
     } else {
-      state.wishlist.add(spotId)
+      wishlist[spotId] = true
     }
     persist()
   }
 
   function isWishlisted(spotId) {
-    return state.wishlist.has(spotId)
+    return !!wishlist[spotId]
   }
 
-  const wishlistCount = computed(() => state.wishlist.size)
-  const wishlistIds = computed(() => [...state.wishlist])
+  const wishlistCount = computed(() => Object.keys(wishlist).length)
+  const wishlistIds = computed(() => Object.keys(wishlist))
 
   return { toggleWishlist, isWishlisted, wishlistCount, wishlistIds }
 }
