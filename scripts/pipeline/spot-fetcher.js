@@ -1,4 +1,4 @@
-const NICARAGUA_SUBREGION_ID = '58581a836630e24c44878fd8'
+const NICARAGUA_SUBREGION_ID = '58581a836630e24c4487903a'
 
 function extractSpot(spot) {
   const { _id, name, lat, lon, conditions, guides } = spot

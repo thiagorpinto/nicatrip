@@ -103,7 +103,7 @@ describe('fetchSpots', () => {
     await fetchSpots('http://mock', fetchFn)
 
     expect(fetchFn).toHaveBeenCalledWith(
-      expect.stringContaining('58581a836630e24c44878fd8')
+      expect.stringContaining('58581a836630e24c4487903a')
     )
   })
 

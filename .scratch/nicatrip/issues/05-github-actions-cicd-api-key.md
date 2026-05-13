@@ -1,4 +1,4 @@
-Status: ready-for-agent
+Status: ready-for-human
 
 # 05 — GitHub Actions CI/CD + Google Places API key setup
 
@@ -19,10 +19,10 @@ The `GOOGLE_PLACES_API_KEY` secret must be added manually to the GitHub repo by 
 
 ## Acceptance criteria
 
-- [ ] Weekly cron job defined at `0 6 * * 1` in the workflow file
-- [ ] Weekly job runs `data-builder` using `${{ secrets.GOOGLE_PLACES_API_KEY }}` as an env var
-- [ ] Push-to-main job skips the data pipeline and only builds + deploys
-- [ ] `peaceiris/actions-gh-pages` deploys `dist/` to the `gh-pages` branch
+- [x] Weekly cron job defined at `0 6 * * 1` in the workflow file
+- [x] Weekly job runs `data-builder` using `${{ secrets.GOOGLE_PLACES_API_KEY }}` as an env var
+- [x] Push-to-main job skips the data pipeline and only builds + deploys
+- [x] `peaceiris/actions-gh-pages` deploys `dist/` to the `gh-pages` branch
 - [ ] **Human step complete:** `GOOGLE_PLACES_API_KEY` secret has been added to the GitHub repo secrets
 - [ ] A manual workflow run (Actions tab → Run workflow) completes successfully and the live site is updated
 
