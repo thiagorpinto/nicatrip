@@ -9,6 +9,9 @@ import { writeFileSync, mkdirSync } from 'fs'
 import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
+const PHOTOS_PER_ACC = 7
+const PHOTO_MAX_WIDTH = 800
+
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 async function build() {
@@ -21,6 +24,9 @@ async function build() {
   // 1. Fetch all Nicaragua surf spots from Surfline
   const spots = await fetchSpots()
   console.log(`Fetched ${spots.length} spots`)
+
+  const photosBaseDir = resolve(__dirname, '../../public/photos')
+  mkdirSync(photosBaseDir, { recursive: true })
 
   const output = []
 
@@ -51,12 +57,19 @@ async function build() {
           const type = deriveAccommodationType(place)
           const amenities = normalizeAmenities(place.types ?? [])
 
+          const photos = await downloadPhotos(
+            place.placeId,
+            (place.photos ?? []).slice(0, PHOTOS_PER_ACC),
+            apiKey,
+            photosBaseDir,
+          )
+
           return {
             name: place.name,
             type,
             nightlyPrice: enriched.nightlyPrice ?? null,
             rating: place.rating ?? null,
-            photos: place.photos ?? [],
+            photos,
             amenities,
             instagramHandle: enriched.instagramHandle ?? null,
             reviews: [],
@@ -103,6 +116,28 @@ async function build() {
   mkdirSync(dirname(outPath), { recursive: true })
   writeFileSync(outPath, JSON.stringify(output, null, 2))
   console.log(`Written ${output.length} spots to ${outPath}`)
+}
+
+async function downloadPhotos(placeId, photoRefs, apiKey, baseDir) {
+  if (!photoRefs.length) return []
+  const dir = resolve(baseDir, placeId)
+  mkdirSync(dir, { recursive: true })
+  const paths = []
+  for (let i = 0; i < photoRefs.length; i++) {
+    const ref = photoRefs[i]
+    const dest = resolve(dir, `${i}.jpg`)
+    const url = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=${PHOTO_MAX_WIDTH}&photo_reference=${ref}&key=${apiKey}`
+    try {
+      const res = await fetch(url)
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      const buf = Buffer.from(await res.arrayBuffer())
+      writeFileSync(dest, buf)
+      paths.push(`/photos/${placeId}/${i}.jpg`)
+    } catch (e) {
+      console.warn(`Photo download failed for ${placeId}[${i}]:`, e.message)
+    }
+  }
+  return paths
 }
 
 function deriveAccommodationType(place) {
