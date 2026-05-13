@@ -2,9 +2,14 @@
   <Transition name="panel">
     <div v-if="spot" class="panel">
       <div class="panel-header">
-        <span class="spot-name">{{ spot.name }}</span>
+        <div class="name-row">
+          <span class="spot-name">{{ spot.name }}</span>
+          <span v-if="wishlisted" class="badge-wishlist">★ Wishlist</span>
+        </div>
         <div class="header-actions">
-          <button class="btn-icon" title="Wishlist">☆</button>
+          <button class="btn-icon" :class="{ wishlisted }" title="Wishlist" @click="toggleWishlist(spot.id)">
+            {{ wishlisted ? '★' : '☆' }}
+          </button>
           <button class="btn-icon" title="Close" @click="emit('close')">×</button>
         </div>
       </div>
@@ -51,10 +56,14 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, computed, watch } from 'vue'
+import { useUserLists } from '../composables/useUserLists.js'
 
 const props = defineProps({ spot: Object })
 const emit = defineEmits(['close'])
+
+const { toggleWishlist, isWishlisted } = useUserLists()
+const wishlisted = computed(() => props.spot ? isWishlisted(props.spot.id) : false)
 
 const tabs = ['Guide', 'Forecast', 'Stay', 'Around']
 const activeTab = ref('Guide')
@@ -87,9 +96,22 @@ watch(() => props.spot, () => { activeTab.value = 'Guide' })
   flex-shrink: 0;
 }
 
+.name-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .spot-name {
   font-size: 1.125rem;
   font-weight: 700;
+}
+
+.badge-wishlist {
+  font-size: 0.7rem;
+  color: #f59e0b;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
 .header-actions {
@@ -111,6 +133,10 @@ watch(() => props.spot, () => { activeTab.value = 'Guide' })
 .btn-icon:hover {
   background: #374151;
   color: #fff;
+}
+
+.btn-icon.wishlisted {
+  color: #f59e0b;
 }
 
 .tab-bar {

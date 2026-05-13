@@ -7,10 +7,18 @@
         <span class="chip chip-amber">Wishlisted</span>
         <span class="chip chip-green">In Plan</span>
       </div>
-      <button class="btn-lists">My Lists</button>
+      <button class="btn-lists" @click="emit('open-lists')">
+        My Lists
+        <span v-if="listCount > 0" class="badge">{{ listCount }}</span>
+      </button>
     </div>
   </header>
 </template>
+
+<script setup>
+defineProps({ listCount: { type: Number, default: 0 } })
+const emit = defineEmits(['open-lists'])
+</script>
 
 <style scoped>
 .topbar {
@@ -75,5 +83,18 @@
   color: #fff;
   cursor: pointer;
   font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.badge {
+  background: #f59e0b;
+  color: #000;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 1px 6px;
+  line-height: 1.4;
 }
 </style>
