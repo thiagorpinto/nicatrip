@@ -6,14 +6,10 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import L from 'leaflet'
 
+const emit = defineEmits(['select-spot'])
+
 const mapEl = ref(null)
 let map = null
-
-const spots = [
-  { name: 'Playa Maderas', coords: [11.470, -85.888] },
-  { name: 'Popoyo', coords: [11.350, -86.013] },
-  { name: 'Aposentillo', coords: [12.550, -87.120] },
-]
 
 function makeIcon() {
   return L.divIcon({
@@ -24,14 +20,27 @@ function makeIcon() {
   })
 }
 
-onMounted(() => {
-  map = L.map(mapEl.value).setView([12.865, -85.207], 8)
+onMounted(async () => {
+  map = L.map(mapEl.value)
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   }).addTo(map)
-  spots.forEach(({ name, coords }) => {
-    L.marker(coords, { icon: makeIcon() }).bindPopup(name).addTo(map)
+
+  const res = await fetch('/nicatrip/data/spots.json')
+  const spots = await res.json()
+
+  const markers = spots.map(spot => {
+    const [lat, lng] = spot.coordinates
+    const marker = L.marker([lat, lng], { icon: makeIcon() }).addTo(map)
+    marker.on('click', () => {
+      console.log('select-spot', spot.id, spot.name)
+      emit('select-spot', spot)
+    })
+    return marker
   })
+
+  const group = L.featureGroup(markers)
+  map.fitBounds(group.getBounds(), { padding: [32, 32] })
 })
 
 onUnmounted(() => {
