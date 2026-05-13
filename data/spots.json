@@ -1,0 +1,41 @@
+[
+  {
+    "id": "mock-001",
+    "name": "Playa Maderas",
+    "coordinates": [
+      11.47,
+      -85.888
+    ],
+    "difficulty": "intermediate",
+    "waveType": "beach break",
+    "guide": {
+      "description": "A beautiful beach break.",
+      "bestSeason": "May–November",
+      "bestTide": "Mid tide",
+      "crowdLevel": "Moderate",
+      "hazards": "Rocks at low tide"
+    },
+    "accommodations": [
+      {
+        "name": "Surf Camp Maderas",
+        "type": "surf-camp",
+        "nightlyPrice": null,
+        "rating": 4.5,
+        "photos": [
+          "photo_ref_1"
+        ],
+        "amenities": [],
+        "instagramHandle": null,
+        "reviews": []
+      }
+    ],
+    "around": [
+      {
+        "name": "El Timon Restaurant",
+        "category": "restaurant",
+        "rating": 4.2,
+        "note": ""
+      }
+    ]
+  }
+]
