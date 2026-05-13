@@ -9,7 +9,7 @@ import { writeFileSync, mkdirSync } from 'fs'
 import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
-const PHOTOS_PER_ACC = 7
+const PHOTOS_PER_ACC = 10
 const PHOTO_MAX_WIDTH = 800
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -57,9 +57,10 @@ async function build() {
           const type = deriveAccommodationType(place)
           const amenities = normalizeAmenities(place.types ?? [])
 
+          const photoRefs = await fetchPhotoRefs(place.placeId, apiKey)
           const photos = await downloadPhotos(
             place.placeId,
-            (place.photos ?? []).slice(0, PHOTOS_PER_ACC),
+            photoRefs.slice(0, PHOTOS_PER_ACC),
             apiKey,
             photosBaseDir,
           )
@@ -116,6 +117,18 @@ async function build() {
   mkdirSync(dirname(outPath), { recursive: true })
   writeFileSync(outPath, JSON.stringify(output, null, 2))
   console.log(`Written ${output.length} spots to ${outPath}`)
+}
+
+async function fetchPhotoRefs(placeId, apiKey) {
+  const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=photos&key=${apiKey}`
+  try {
+    const res = await fetch(url)
+    const data = await res.json()
+    return (data.result?.photos ?? []).map(p => p.photo_reference)
+  } catch (e) {
+    console.warn(`Place Details failed for ${placeId}:`, e.message)
+    return []
+  }
 }
 
 async function downloadPhotos(placeId, photoRefs, apiKey, baseDir) {
